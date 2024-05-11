@@ -52,7 +52,7 @@ function additemsjs(){
  //console.log(dateELement);
  const duedate=dateELement.value;
  //console.log(duedate);
- 
+ if(!name==='' && !duedate===''){
  todoList.push({name,duedate});
  console.log(todoList);
  //document.querySelector('.display-items').innerHTML=todoarray;
@@ -60,5 +60,9 @@ function additemsjs(){
  ipvalueElement.value='';
  dateELement.value='';
  rendertodoList();
+}
+else{
+  alert('Please enter todo name and select due date to ADD to the ToDolist');
+}
 }
 
