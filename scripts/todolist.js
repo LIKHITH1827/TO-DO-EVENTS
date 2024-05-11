@@ -6,16 +6,13 @@
   duedate:'2025-02-29'
 }];*/
 
-//console.log(todoList);
 const todoList=[];
 
-if(todoList.length===0){
-  rendertodoList();
-}
+rendertodoList();
 
-
-
+//function to render the items
 function rendertodoList(){
+  //console.log("render");
   let todolisthtml='';
 for(let i=0;i<todoList.length;i++){
   const todoobject=todoList[i];
@@ -33,36 +30,29 @@ for(let i=0;i<todoList.length;i++){
   `;
 todolisthtml+=html;
 }
-
-//console.log(
-  //todolisthtml
-//);
-
 document.querySelector('.display-items').innerHTML=todolisthtml;
 }
 
-
-
+//function to add items to the list
 function additemsjs(){
+  
  const ipvalueElement= document.querySelector('.inputvalue');
  const name=ipvalueElement.value;
-
  const dateELement= document.querySelector('.ipdatejsClass');
-
- //console.log(dateELement);
  const duedate=dateELement.value;
- //console.log(duedate);
- if(!name==='' && !duedate===''){
+ 
+ if(name!=='' && duedate!==''){
  todoList.push({name,duedate});
- console.log(todoList);
- //document.querySelector('.display-items').innerHTML=todoarray;
- //console.log(todoarray);
+// console.log(todoList);
  ipvalueElement.value='';
  dateELement.value='';
  rendertodoList();
 }
-else{
+else if(name==='' || duedate===''){
   alert('Please enter todo name and select due date to ADD to the ToDolist');
+  ipvalueElement.value='';
+ dateELement.value='';
+  rendertodoList();
 }
 }
 
