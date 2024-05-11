@@ -1,14 +1,20 @@
-const todoList=[{
+/*const todoList=[{
   name:'dinner',
   duedate:'2024-05-23'
 },{
   name: 'lunch',
   duedate:'2025-02-29'
-}];
+}];*/
 
 //console.log(todoList);
 
-rendertodoList();
+const todoList=[];
+
+if(todoList.length===0){
+  rendertodoList();
+}
+
+
 
 
 function rendertodoList(){
