@@ -7,13 +7,11 @@
 }];*/
 
 //console.log(todoList);
-
 const todoList=[];
 
 if(todoList.length===0){
   rendertodoList();
 }
-
 
 
 
